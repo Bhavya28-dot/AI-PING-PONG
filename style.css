@@ -1,0 +1,33 @@
+body
+{
+background-size: cover;
+}
+.heading h1{
+    font-size: 35px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:pink ;
+ display: inline;
+ text-align: center;
+ box-shadow: 5px 5px 5px pink;
+}
+.heading button{
+float: right;
+background-color: purple;
+border-style: dotted;
+border-color: white;
+color: white;
+font-size: 20px;
+}
+.heading{
+    width: 100%;
+    text-align: left;
+}
+#btn_play{
+    font-size: 23px;
+    border-radius: 10px;
+    border-style: double;
+    background-color: transparent;
+    color:pink;
+    border-color: pink;
+    width: 5%;
+}
