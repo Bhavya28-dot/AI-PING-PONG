@@ -1,3 +1,6 @@
+rightWristx=0;
+rightWristy=0;
+rightScore=0;
 
 /*created by prashant shukla */
 
@@ -37,7 +40,11 @@ function modelLoaded(){
 }
 
 function gotPoses(results){
-  
+  if(results.length>0){
+    rightWristx=results[0].pose.rightWrist.x;
+    rightWristy=results[0].pose.rightWrist.y;
+    rightScore=results[0].pose.keypoints[10].score;
+  }
 }
 
 function draw(){
@@ -51,6 +58,12 @@ image(video,0,0,700,600);
  fill("black");
  stroke("black");
  rect(0,0,20,700);
+
+ if(rightScore>0.2){
+   fill("pink");
+   stroke("purple");
+   circle(rightWristx,rightWristy,20);
+ }
  
    //funtion paddleInCanvas call 
    paddleInCanvas();
