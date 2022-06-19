@@ -1,6 +1,7 @@
 rightWristx=0;
 rightWristy=0;
 rightScore=0;
+game_status="";
 
 /*created by prashant shukla */
 
@@ -35,6 +36,11 @@ function setup(){
   poseNet.on('pose',gotPoses);
 }
 
+function start(){
+  game_status="start";
+  document.getElementById("status").innerHTML="Game is loaded";
+}
+
 function modelLoaded(){
   console.log("Model is Loaded");
 }
@@ -48,6 +54,8 @@ function gotPoses(results){
 }
 
 function draw(){
+if(game_status=="start"){
+
 
  background(0); 
 image(video,0,0,700,600);
@@ -58,7 +66,7 @@ image(video,0,0,700,600);
  fill("black");
  stroke("black");
  rect(0,0,20,700);
-
+ 
  if(rightScore>0.2){
    fill("pink");
    stroke("purple");
@@ -92,6 +100,7 @@ image(video,0,0,700,600);
    
    //function move call which in very important
     move();
+}
 }
 
 
